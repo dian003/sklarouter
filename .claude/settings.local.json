@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -ti:20128)",
+      "Bash(xargs kill -9)",
+      "Bash(lsof -ti:20127)",
+      "Bash(curl -s 'http://localhost:20128/api/providers' -H 'Accept: */*')",
+      "Bash(curl -s 'http://localhost:20128/v1/models' -H 'Accept: */*')",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s 'http://localhost:20128/api/models/custom' -H 'Cookie: auth_token=[REDACTED]')",
+      "Bash(curl -s https://dashscope-intl.aliyuncs.com/compatible-mode/v1/models -H 'Authorization: Bearer sk-dummy-key')",
+      "Bash(curl -s https://dashscope-intl.aliyuncs.com/compatible-mode/v1/models -H 'Authorization: [REDACTED]')",
+      "Bash(curl -s 'https://www.alibabacloud.com/help/en/model-studio/models')",
+      "WebFetch(domain:www.alibabacloud.com)",
+      "Bash(curl -s 'http://localhost:20128/api/provider-nodes' -H 'Cookie: auth_token=[REDACTED]')",
+      "Bash(curl -s 'http://localhost:20128/api/provider-nodes' -b 'auth_token=[REDACTED]')",
+      "Bash(curl -s 'http://localhost:20128/api/provider-nodes')",
+      "Bash(sqlite3 data/db/data.sqlite \"SELECT id, type, name, prefix, baseUrl FROM provider_nodes WHERE id LIKE 'openai-compatible%';\")",
+      "Bash(sqlite3 ~/.9router/db/data.sqlite \"SELECT id, type, name, prefix, baseUrl FROM provider_nodes WHERE id LIKE 'openai-compatible%';\")",
+      "Bash(sqlite3 *)",
+      "Bash(curl *)",
+      "Bash(NODE_PATH=/tmp/node_modules /tmp/node_modules/.bin/vitest run --reporter=verbose --config ./vitest.config.js unit/compatible-provider-connections.test.js)",
+      "Read(//private/tmp/**)",
+      "Bash(npm install *)",
+      "Bash(NODE_PATH=./node_modules ./node_modules/.bin/vitest run *)",
+      "Bash(npm test *)",
+      "Bash(npm run *)",
+      "Bash(ps -p 20394 -o command=)",
+      "Bash(ps -p 21765 -o command=)",
+      "Bash(ps -p 28362 -o command=)",
+      "Bash(kill 21765)",
+      "Bash(xargs -r ps -p)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh api *)",
+      "Bash(node -e \"console.log\\('chrome:', require\\('playwright'\\).chromium.executablePath ? 'has fn' : 'n/a'\\)\")",
+      "Bash(lsof -i:20128)",
+      "Bash(PORT=20128 HOSTNAME=127.0.0.1 NEXT_PUBLIC_BASE_URL=http://localhost:20128 node .next/standalone/server.js)",
+      "Bash(echo \"pid $!\")",
+      "Bash(sudo rm -rf .next)",
+      "Bash(sshpass *)"
+    ]
+  }
+}
